@@ -33,10 +33,10 @@ export class BuscaComponent implements OnInit {
         concatMap(nome  => this.buscaService.buscar(nome)), // busca os dados na api
         converterPessoa() // converte os dados para o tipo Pessoa
       )
-      .subscribe(pessoa => this.buscar(pessoa));
+      .subscribe(pessoa => this.armazenarPessoa(pessoa));
   }
 
-  private buscar(pessoa: Pessoa) {
+  private armazenarPessoa(pessoa: Pessoa) {
     this.totalEncontrados++;
     this.pessoasEncontradas.push(pessoa);
   }
