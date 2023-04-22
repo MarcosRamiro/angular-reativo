@@ -1,5 +1,5 @@
-import { Resultado } from './../services/people.service';
 import { pipe, switchMap, map } from 'rxjs';
+import Resultado from '../interfaces/resultado';
 
 export function converterPessoa() {
   return pipe(
