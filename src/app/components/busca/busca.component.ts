@@ -1,4 +1,4 @@
-import { concatMap, distinctUntilChanged, filter } from 'rxjs/operators';
+import { switchMap, distinctUntilChanged, filter } from 'rxjs/operators';
 import { tap, debounceTime, map } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
@@ -30,7 +30,7 @@ export class BuscaComponent implements OnInit {
           this.pessoasEncontradas = [];
           this.totalEncontrados = 0;
         }),
-        concatMap(nome  => this.buscaService.buscar(nome)), // busca os dados na api
+        switchMap(nome  => this.buscaService.buscar(nome)), // cancela a busca anterior e busca os dados na api com novo valor
         converterPessoa() // converte os dados para o tipo Pessoa
       )
       .subscribe(pessoa => this.armazenarPessoa(pessoa));
