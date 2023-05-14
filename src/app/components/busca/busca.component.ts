@@ -30,7 +30,7 @@ export class BuscaComponent implements OnInit {
           this.pessoasEncontradas = [];
           this.totalEncontrados = 0;
         }),
-        switchMap(nome  => this.buscaService.buscar(nome)), // cancela a busca anterior e busca os dados na api com novo valor
+        switchMap(nome => this.buscaService.buscar(nome)), // cancela a busca anterior e busca os dados na api com novo valor
         converterPessoa() // converte os dados para o tipo Pessoa
       )
       .subscribe(pessoa => this.armazenarPessoa(pessoa));

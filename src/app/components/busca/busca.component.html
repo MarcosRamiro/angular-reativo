@@ -1,13 +1,18 @@
-<p>Busca Star Wars!</p>
-<p>Exemplo de Typeahead searching</p>
+<div class="container">
+  <h1>Busca Star Wars!</h1>
 
-<input id="pesquisa" type="text" [formControl]="pesquisaTexto">
-<p>Resultado</p>
+  <h2>Exemplo de Typeahead searching</h2>
 
-<ul>
-  <li *ngFor="let pessoa of pessoasEncontradas" >
-    {{pessoa.name}}
-  </li>
-</ul>
+  <input class="input" id="pesquisa" type="text" [formControl]="pesquisaTexto">
 
-<p>Total Encontrados: {{ totalEncontrados }}</p>
+  <h3>Resultado</h3>
+
+  <ul>
+    <li class="li" *ngFor="let pessoa of pessoasEncontradas">
+      {{pessoa.name}}
+    </li>
+  </ul>
+
+  <p>Total Encontrados: {{ totalEncontrados }}</p>
+
+</div>
